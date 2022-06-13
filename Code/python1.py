@@ -140,8 +140,15 @@ def three(arg1):
 
 	# help(int) for working with numbers and help(str) for working with Strings.
 
+
 def four(arg1):
-	return ""
+    arg =arg1.split()
+    for num in arg:
+        sum=0
+        for i in range(0, len(num)):
+            sum+=int(num[i])
+    return sum
+print(four("55 72 86"))
 
 	# <QUESTION 5>
 
