@@ -42,7 +42,7 @@ def one(input1, input2):
 	else:
 		return input1 +"."+ input2
 
-	print(one("abc", "abcde"))
+print(one("abc", "abcde"))
 	
 
 
@@ -112,7 +112,7 @@ def three(arg1):
 	else:
 		return "null"
 
-print(three(15))	
+print(three(15))	  
 
 
 	
@@ -142,14 +142,27 @@ print(three(15))
 
 
 def four(arg1):
-    arg =arg1.split()
-    for num in arg:
-        sum=0
-        for i in range(0, len(num)):
-            sum+=int(num[i])
-    return sum
-	
-print(four("55 72 86"))
+numList = arg1.split()
+
+    largest = 0
+
+    for x in numList:
+
+        size = 0
+
+        strNum = str(x)
+
+        for y in range(len(strNum)):
+
+            size += int(strNum[y])
+
+            if size > largest:
+
+                largest = size
+
+
+
+    return largest
 
 	# <QUESTION 5>
 
@@ -177,7 +190,20 @@ print(four("55 72 86"))
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return ""
+
+    listFiles = input.split(",")
+
+    length = len(listFiles)
+
+    unsafe = []
+
+    for encrypt in range(2, length, 4):
+
+        if listFiles[encrypt] == "False" and listFiles[(encrypt-2)] not in unsafe:
+
+            unsafe.append(listFiles[(encrypt-2)])
+
+    return unsafe
 
 	# <QUESTION 6>
 
@@ -198,7 +224,28 @@ def five(input):
 
 
 def six(input):
-	return ""
+
+    for letter in range(len(input)-1):
+
+        if input[letter] == "i" and input[letter+1] == "e":
+
+            if input[letter-1] == "c":
+
+                return False
+
+            else:
+
+                return True
+
+        elif input[letter] == "e" and input[letter+1] == "i":
+
+            if input[letter-1] == "c":
+
+                return True
+
+            else:
+
+                return False
 	
 	
 		
@@ -281,5 +328,20 @@ def nine(inputString, char):
 
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
-def ten(string, int, char): 
-	return ""
+def ten(string, int, char):
+
+    str_lcase = string.lower()
+
+    word_length = len(str_lcase)
+
+    if int <= word_length:
+
+        if str_lcase[int-1] == char:
+
+            return True
+
+        else:
+
+            return False
+
+    return False
